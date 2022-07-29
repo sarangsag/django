@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+        <link href="{% static 'css/newbootstrap.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/product.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/newstyle.css' %}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static 'css/newowl.theme.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/newowl.carousel.css' %}" type="text/css" media="screen" property="" />
+    <link href="{% static 'css/newprettyPhoto.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/newminimal-slider.css' %}" type="text/css" media="all" />
+    <link href="{% static 'css/newfontawesome-all.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #105469;
+  font-family: 'Open Sans', sans-serif;
+}
+table {
+<!--  background: #012B39;-->
+  border-radius: 0.25em;
+  border-collapse: collapse;
+  margin: 1em;
+}
+th {
+  border-bottom: 1px solid #364043;
+  color: #E2B842;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+td {
+  color: #fff;
+  font-weight: 400;
+  padding: 0.65em 1em;
+}
+.disabled td {
+  color: #4F5F64;
+}
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: #014055;
+}
+img{
+width:60px;
+}
+
+</style>
+
+
+</head>
+
+<body>
+<ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">View_Bookdetails</li>
+</ol>
+<table width="100%">
+  <thead>
+    <tr>
+      <th>Item
+      <th> Name
+      <th>Color
+      <th>Qty
+      <th>Total
+<!--      <th>payment-->
+      <th>D_name
+      <th>D_address
+      <th>D_pincode
+      <th>Book_date
+      <th>Type
+      <th>status
+<!--      <th>Item-->
+
+<!--      <th>Price-->
+<!--      <th>Payment-->
+<!--      <th>Order Date-->
+<!--      <th>Status-->
+
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <td><img src="{{i.file.url}}">
+      <td>{{i.pname}}
+      <td>{{i.pcolor}}
+      <td>{{i.quantity}}
+      <td>Rs.{{i.total}}
+<!--      <td>{{i.payment}}-->
+      <td>{{i.name}}
+      <td>{{i.address}}
+      <td>{{i.pincode}}
+      <td>{{i.dt}}
+      <td>{{i.dtype}}
+      <td>{{i.status}}
+<!--      <td>{{i.pprice}}-->
+<!--      <td>Cash On Delevery-->
+<!--      <td>{{i.dt}}-->
+<!--      <td>Out For Delevery-->
+<!--      <td><a href="">Delete</a>-->
+{% endfor %}
+  </tbody>
+</table>
+
+
+   <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <script src="{% static 'js/minimal-slider.js' %}"></script>
+    <!-- carousel -->
+    <script src="js/owl.carousel.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 1,
+                        nav: false
+                    },
+                    900: {
+                        items: 1,
+                        nav: false
+                    },
+                    1000: {
+                        items: 3,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //carousel -->
+    <script>
+        $(document).ready(function() {
+            $(".dropdown").hover(
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+    <!-- password-script -->
+    <script>
+        window.onload = function() {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- //password-script -->
+    <!--/ start-smoth-scrolling -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            /*
+            						var defaults = {
+            							  containerID: 'toTop', // fading element id
+            							containerHoverID: 'toTopHover', // fading element hover id
+            							scrollSpeed: 1200,
+            							easingType: 'linear'
+            						 };
+            						*/
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!--// end-smoth-scrolling -->
+	<!-- /jss -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- //jss -->
+    <!-- jQuery-Photo-filter-lightbox-Gallery-plugin -->
+    <!--// end-smoth-scrolling -->
+    <script src="{% static 'js/jquery-1.7.2.js' %}"></script>
+    <script src="{% static 'js/jquery.quicksand.js' %}"></script>
+    <script src="{% static 'js/pretty-script.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <!-- //jQuery-Photo-filter-lightbox-Gallery-plugin -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+

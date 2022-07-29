@@ -1,0 +1,165 @@
+{% load static %}
+<head>
+
+<link href="{% static 'css/newbootstrap.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/product.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/newstyle.css' %}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static 'css/newowl.theme.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/newowl.carousel.css' %}" type="text/css" media="screen" property="" />
+    <link href="{% static 'css/newprettyPhoto.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/newminimal-slider.css' %}" type="text/css" media="all" />
+    <link href="{% static 'css/newfontawesome-all.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+<ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'uindex' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">payment</li>
+    </ol>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<style>
+.submit{
+margin-top:23em;
+margin-left:36em;
+}
+.w3-container {
+  font-size: 14px;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+
+
+
+<div class="center">
+  <h3 class="donate">
+    <div class="w3-card-4">
+
+    <header class="w3-container w3-blue">
+    <h5>make payment</h5>
+    </header>
+
+    <div class="w3-container">
+    <p>you can pay using. paypal</p>
+
+    <!-- PAYPAL BUTTONS HERE -->
+       <!-- Set up a container element for the button -->
+    <div id="paypal-button-container"></div>
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AePzktXYBc44OFuleSnhbG-PvDNI6lYuHoV4xYG1PdbDuAMuQSN2e-4n1MlWsUNz033EGeJdZ1vDama4&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '88.44'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData) {
+                    // Successful capture! For demo purposes:
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                    var transaction = orderData.purchase_units[0].payments.captures[0];
+                    alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+                    // Replace the above to show a success message within this page, e.g.
+                    // const element = document.getElementById('paypal-button-container');
+                    // element.innerHTML = '';
+                    // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                    // Or go to another URL:  actions.redirect('thank_you.html');
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+
+
+    </div>
+
+    <footer class="w3-container w3-blue">
+    </footer>
+    </div>
+  </h3>
+
+</div>
+<form action="../pay/">
+<button class="submit"><span>Cash On Delevery </span></button>
+</form>
+</body>

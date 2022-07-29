@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+ {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+        <link href="{% static 'css/newbootstrap.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/product.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/newstyle.css' %}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static 'css/newowl.theme.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/newowl.carousel.css' %}" type="text/css" media="screen" property="" />
+    <link href="{% static 'css/newprettyPhoto.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/newminimal-slider.css' %}" type="text/css" media="all" />
+    <link href="{% static 'css/newfontawesome-all.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+	.cart_log{
+	margin-left:40em;
+	}
+</style>
+
+</head>
+
+<body>
+
+<ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'uindex' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">View_products</li>
+	<a href= "{% url 'cart' %}"><img src= "{% static 'image/cartlog3.jpg' %}" style="width:3em" class="cart_log"></a>
+    </ol>
+
+
+<div class="container">
+    {% for i in data %}
+
+
+<div class="col-xs-12 col-md-6">
+	<!-- First product box start here-->
+	<div class="prod-info-main prod-wrap clearfix">
+		<div class="row">
+				<div class="col-md-5 col-sm-12 col-xs-12">
+					<div class="product-image">
+						<img src="{{i.file.url}}" class="img-responsive">
+<!--						<span class="tag2 hot">-->
+<!--							HOT-->
+<!--						</span>-->
+					</div>
+				</div>
+				<div class="col-md-7 col-sm-12 col-xs-12">
+				<div class="product-deatil">
+						<h5 class="name">
+							<a href="#">
+								{{i.pname}}
+							</a>
+							<a href="#">
+								<span>RAM : {{i.pram}}</span>
+                                <span>ROM : {{i.prom}}</span>
+                                <span>color : {{i.pcolor}}</span>
+							</a>
+
+						</h5>
+						<p class="price-container">
+							<span>Rs.{{i.pprice}}</span>
+						</p>
+						<span class="tag1"></span>
+				</div>
+				<div class="description">
+					<p>A Short product description here </p>
+					<h6><span>In Stoke : {{i.pitems}}</span></h6>
+				</div>
+					{% if user %}
+<!--					<input type="text" value="{{user}}" name="user" >-->
+				<div class="product-info smart-form">
+					<div class="row">
+						<div class="col-md-12">
+							<a href="../cart1/{{i.id}}{{user}}" class="btn btn-danger">Add to cart</a>
+                            <a href="../placeorder/{{i.id}}" class="btn btn-info">Buy Now</a>
+						</div>{% endif %}
+						<div class="col-md-12">
+							<div class="rating">Rating:
+								<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+								<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+								<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+								<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+								<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end product -->
+
+
+
+</div>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

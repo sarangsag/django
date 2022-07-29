@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ureg</title>
+</head>
+<body>
+
+
+
+<table border="1">
+    <tr>
+    <th>Name</th>
+    <th>pickup location</th>
+    <th>drop location</th>
+        <th>seats</th>
+    </tr>
+    {% for i in booking %}
+
+    <tr>
+    <td>{{user}}</td>
+    <td>{{i.pickup}}</td>
+    <td>{{i.drop}}</td>
+    <td>{{i.seat }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+ {% load static %}
+        <link href="{% static 'css/newbootstrap.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/newstyle.css' %}" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<style>
+    body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #118ab2;
+    color: #ffffff;
+    text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+<!--.styled-table tbody > tr:hover {-->
+<!--    font-weight: bold;-->
+<!--    color: #118ab2;-->
+<!--}-->
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #118ab2;
+}
+</style>
+
+</head>
+
+<body>
+
+<div>
+<ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'aindex' %}">Home</a>
+        </li>
+                <li class="breadcrumb-item active">View_feedback</li>
+</ol>
+<table class="styled-table" >
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Date</th>
+            <th>Message</th>
+            <th>Save/Delete</th>
+        </tr>
+    </thead>
+    {% for i in feedback %}
+    <tbody>
+
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.sub}}</td>
+            <td>{{i.dt}}</td>
+            <td>{{i.mes}}</td>
+            <td><a href="../delete_feedback/{{i.email}}">Delete</a> </td>
+        </tr>{% endfor %}
+
+
+
+    </tbody>
+</table>
+
+</html>
+

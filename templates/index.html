@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<head>
+    <title>soften pro</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+        <link href="{% static 'css/newbootstrap.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static 'css/newstyle.css' %}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static 'css/newowl.theme.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/newowl.carousel.css' %}" type="text/css" media="screen" property="" />
+    <link href="{% static 'css/newprettyPhoto.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/newminimal-slider.css' %}" type="text/css" media="all" />
+    <link href="{% static 'css/newfontawesome-all.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mian-content">
+        <!-- main image slider container -->
+        <div class="slide-window">
+            <div class="slide-wrapper" style="width: 300%;">
+                <div class="slide">
+                    <div class="slide-caption">
+                        <p>The right choice</p>
+                        <h3>Let's <span>Find your</span> Smart <span>Phones</span></h3>
+                        <div class="cont-btn">
+                            <a class="btn text-uppercase" href="{% url 'index' %}">
+                            BuyNow</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="slide slide2">
+                    <div class="slide-caption">
+                        <p>The right choice.</p>
+                        <h3>Propel<span>yourself</span> into the  <span>future</span></h3>
+                        <div class="cont-btn">
+                            <a class="btn text-uppercase" href="{% url 'index' %}">
+                            BuyNow</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="slide slide3">
+                    <div class="slide-caption">
+                        <p>The right choice.</p>
+                        <h3>Premium Worldwide <span>smart phones</span></h3>
+                        <div class="cont-btn">
+                            <a class="btn text-uppercase" href="{% url 'index' %}">
+                            BuyNow</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide-controller">
+                <div class="slide-control-left">
+                    <div class="slide-control-line"></div>
+                    <div class="slide-control-line"></div>
+                </div>
+                <div class="slide-control-right">
+                    <div class="slide-control-line"></div>
+                    <div class="slide-control-line"></div>
+                </div>
+            </div>
+        </div>
+        <!-- main image slider container -->
+
+        <div class="header-top-w3layouts">
+            <div class="container">
+
+                <header>
+                    <div class="clearfix"></div>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="logo text-left">
+                            <h1>
+                                <a class="navbar-brand" href="{% url 'index' %}">
+                            BUY SMART</a>
+                            </h1>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                              
+                            </span>
+
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-lg-auto text-right">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'index' %}">Home
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'products' %}">Store</a>
+                                </i></li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="log-in">
+                                 <a class="btn text-uppercase" href="{% url 'login' %}">
+                            login </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div><br>
+<!--                            <div class="log-in">-->
+<!--                                 <a class="btn text-uppercase" href="{% url 'login' %}">-->
+<!--                            ADMIN</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                    </nav>
+               </header>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="banner-bottom-w3ls py-lg-5 py-md-5 py-3">
+        <div class="container">
+            <div class="inner-sec-w3layouts py-lg-5 py-3">
+                <div class="intro text-left">
+                    <h3 class="main mb-md-5 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut labore et dolore.</h3>
+                    <p>Adipisicing elit sedc eiusmod tempor incididunt ut labore et dolore.</p>
+                </div>
+                <div class="row mt-lg-5 mt-md-4 mt-4">
+                    <div class="col-lg-4 about-in text-left">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="fas fa-anchor mb-2"></i>
+                                <h6 class="my-3">Consectetur elit</h6>
+                                <h5 class="card-title">Ocean Freight</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 about-in text-left">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <i class="fas fa-fighter-jet mb-2"></i>
+                                <h6 class="my-3">Consectetur elit</h6>
+                                <h5 class="card-title">Air Freight</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 about-in text-left">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="fas fa-truck mb-2"></i>
+                                <h6 class="my-3">Consectetur elit</h6>
+                                <h5 class="card-title">Land Transport</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 about-in text-left">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="fab fa-docker mb-2"></i>
+                                <h6 class="my-3">Consectetur elit</h6>
+                                <h5 class="card-title">Supply</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 about-in text-left">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="far fa-clock mb-2"></i>
+
+                                <h6 class="my-3">Consectetur elit</h6>
+                                <h5 class="card-title">Fast & On Time</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 about-in text-left">
+                        <div class="card">
+                            <div class="card-body">
+                                <i class="far fa-money-bill-alt mb-2"></i>
+                                <h6 class="my-3">Consectetur elit</h6>
+                                <h5 class="card-title">Weather Insuarance</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur elit,Adipisicing elit tempor.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+    <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <script src="{% static 'js/minimal-slider.js' %}"></script>
+    <!-- carousel -->
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 1,
+                        nav: false
+                    },
+                    900: {
+                        items: 1,
+                        nav: false
+                    },
+                    1000: {
+                        items: 3,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //carousel -->
+    <script>
+        $(document).ready(function() {
+            $(".dropdown").hover(
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function() {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+    <!-- password-script -->
+    <script>
+        window.onload = function() {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- //password-script -->
+    <!--/ start-smoth-scrolling -->
+    <script src="{% static 'js/move-top.js' %}"></script>
+    <script src="{% static 'js/easing.js' %}"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            /*
+            						var defaults = {
+            							  containerID: 'toTop', // fading element id
+            							containerHoverID: 'toTopHover', // fading element hover id
+            							scrollSpeed: 1200,
+            							easingType: 'linear'
+            						 };
+            						*/
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!--// end-smoth-scrolling -->
+	<!-- /js -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- //js -->
+    <!-- jQuery-Photo-filter-lightbox-Gallery-plugin -->
+    <!--// end-smoth-scrolling -->
+    <script src="{% static 'js/jquery-1.7.2.js' %}"></script>
+    <script src="{% static 'js/jquery.quicksand.js' %}"></script>
+    <script src="{% static 'js/pretty-script.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <!-- //jQuery-Photo-filter-lightbox-Gallery-plugin -->
+
+</body>
+
+</html>

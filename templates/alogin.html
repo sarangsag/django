@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+<title>login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{% static 'css/newstylelog.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/newfontawesome-all.css' %}" rel="stylesheet">
+<script src="{% static 'js/newjquerylog.min.js' %}" > </script>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">-->
+<!--<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">-->
+
+
+
+</head>
+<body>
+	<div class="main-agileits">
+		<h1>admin's Login</h1>
+		<div class="mainw3-agileinfo form">
+			<div id="login">
+				<form action="#" method="POST">
+					{% csrf_token %}
+					<div class="field-wrap">
+						<label> Enter Your Email<span class="req">*</span> </label>
+						<input type="email"required autocomplete="off" name="amail"/>
+					</div>
+					<div class="field-wrap">
+						<label> Your Password<span class="req">*</span> </label>
+						<input type="password"required autocomplete="off" name="apsw"/>
+					</div>
+
+<!--					<p class="forgotb"> <a href="{% url 'index' %}">New Driver? Sign Up</a></p>-->
+					<button class="button button-block"/>Log In</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+	<script>
+	$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+	  var $this = $(this),
+		  label = $this.prev('label');
+
+		  if (e.type === 'keyup') {
+				if ($this.val() === '') {
+			  label.removeClass('active highlight');
+			} else {
+			  label.addClass('active highlight');
+			}
+		} else if (e.type === 'blur') {
+			if( $this.val() === '' ) {
+				label.removeClass('active highlight');
+				} else {
+				label.removeClass('highlight');
+				}
+		} else if (e.type === 'focus') {
+
+		  if( $this.val() === '' ) {
+				label.removeClass('highlight');
+				}
+		  else if( $this.val() !== '' ) {
+				label.addClass('highlight');
+				}
+		}
+
+	});
+	</script>
+</body>
+</html>

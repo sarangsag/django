@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+<title>update</title>
+	<script src="{% static 'js/b.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flaty User login Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<link href="{% static 'css/upload.css' %}" rel="stylesheet" type="text/css" />
+<!-- //Custom Theme files -->
+<!-- js -->
+<script src="{% static 'js/newjquerylog.min.js' %}" > </script>
+<!-- //js -->
+<!-- web font -->
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+<!-- //web font -->
+
+</head>
+<body>
+	<div class="main-agileits">
+		<h1>Products Update</h1>
+		<div class="mainw3-agileinfo form">
+			<div id="login">
+				{% for i in data %}
+				<form action="../update1/" method="POST">
+					{% csrf_token %}
+
+					<div class="field-wrap">
+						<label>Select The Company<span class="req">*</span> </label>
+						<center><select name="pcompany" id="pcompany">
+                            <option value="{{i.pcompany}}">{{i.pcompany}}</option>
+                         <option value="oppo">Oppo</option>
+						 <option value="samsung">Samsung</option>
+                         <option value="vivo">Vivo</option>
+                        <option value="realme">Realme</option>
+							<option value="xiaomi">Xiaomi</option>
+							<option value="apple">Apple</option>
+                        </select></center>
+					</div>
+
+
+					<div class="field-wrap">
+						<label> Name of mobile<span class="req">*</span> </label>
+						<input type="text"required autocomplete="off" name="pname" value="{{i.pname}}"/>
+					</div>
+
+<!--					<div class="field-wrap">-->
+<!--						<label> Upload  Photo<span class="req">*</span> </label><br><br>-->
+<!--						<input type="file"required autocomplete="off" name="file" value="{{i.file}}"/>-->
+<!--					</div>-->
+
+					<div class="field-wrap">
+						<label>RAM<span class="req">*</span> </label>
+						<center><select name="pram" id="pram">
+							<option value="{{i.pram}}">{{i.pram}}</option>
+                         <option value="4GB">4GB</option>
+						 <option value="6GB">6GB</option>
+                         <option value="8GB">8GB</option>
+                        </select></center>
+					</div>
+
+
+					<div class="field-wrap">
+						<label>ROM<span class="req">*</span> </label>
+						<center><select name="prom" id="prom">
+							<option value="{{i.prom}}">{{i.prom}}</option>
+                         <option value="32GB">32 GB</option>
+						 <option value="64GB">64 GB</option>
+                         <option value="128GB">128 GB</option>
+							<option value="1 TB">1 TB</option>
+                        </select></center>
+					</div>
+
+
+					<div class="field-wrap">
+						<label>Color<span class="req">*</span> </label>
+						<center><select name="pcolor" id="pcolor">
+							<option value="{{i.pcolor}}">{{i.pcolor}}</option>
+                         <option value="black">black</option>
+						 <option value="white">white</option>
+                         <option value="blue">blue</option>
+						<option value="silver">silver</option>
+						<option value="golden">golden</option>
+						<option value="green">green</option>
+						<option value="red">red</option>
+						<option value="orange">orange</option>
+                        </select></center>
+					</div>
+
+
+					<div class="field-wrap">
+						<label> Price<span class="req">*</span> </label>
+						<input type="text"required autocomplete="off" name="pprice" value="{{i.pprice}}"/>
+					</div>
+						<div class="field-wrap">
+						<label>Product ID<span class="req">*</span> </label>
+						<input type="text"required autocomplete="off" name="id" value="{{i.id}}" readonly/>
+					</div>
+					<div class="field-wrap">
+						<label> No_Of_Items<span class="req">*</span> </label>
+						<input type="text"required autocomplete="off" name="pitems" value="{{i.pitems}}"/>
+					</div>
+					<button class="button button-block" onclick="update()"/>Update</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+	<script>
+	$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+	  var $this = $(this),
+		  label = $this.prev('label');
+
+		  if (e.type === 'keyup') {
+				if ($this.val() === '') {
+			  label.removeClass('active highlight');
+			} else {
+			  label.addClass('active highlight');
+			}
+		} else if (e.type === 'blur') {
+			if( $this.val() === '' ) {
+				label.removeClass('active highlight');
+				} else {
+				label.removeClass('highlight');
+				}
+		} else if (e.type === 'focus') {
+
+		  if( $this.val() === '' ) {
+				label.removeClass('highlight');
+				}
+		  else if( $this.val() !== '' ) {
+				label.addClass('highlight');
+				}
+		}
+
+	});
+	</script>
+	</form>
+</body>
+</html>
+{% endfor %}
+
+
+
+
+
+
+<!--
+</html>-->
+
+
